@@ -24,6 +24,7 @@ return {
   },
   -- List of apps to start once on start-up
   run_on_start_up = {
+    'mate-mouse-properties', --to get theme
     'picom --config ' .. filesystem.get_configuration_dir() .. '/configuration/picom.conf',
     'nm-applet --indicator', -- wifi
     'pnmixer', -- shows an audiocontrol applet in systray when installed.
@@ -35,7 +36,7 @@ return {
      'synology-drive -minimized',
      --'steam -silent',
      '/usr/bin/barrier',
-     '~/.local/bin/wallpaper', -- wallpaper-reddit script
+     --'~/.local/bin/wallpaper', -- wallpaper-reddit script
     -- Add applications that need to be killed between reloads
     -- to avoid multipled instances, inside the awspawn script
     '~/.config/awesome/configuration/awspawn' -- Spawn "dirty" apps that can linger between sessions

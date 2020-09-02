@@ -41,7 +41,7 @@ widget_button:buttons(
       1,
       nil,
       function()
-        awful.spawn('xfce4-power-manager-settings')
+        awful.spawn('mate-power-preferences')
       end
     )
   )
