@@ -16,3 +16,19 @@ end
 for _, app in ipairs(apps.run_on_start_up) do
   run_once(app)
 end
+
+-- following coded added due to autostart is not working directly (sourabh)
+do
+  local cmds =
+  {
+    "mate-mouse-properties",
+    "picom",
+    "nm-applet --indicator",
+    "flameshot"
+  }
+
+  for _,i in pairs(cmds) do
+    awful.util.spawn(i)
+  end
+end
+

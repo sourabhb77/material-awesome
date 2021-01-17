@@ -23,7 +23,7 @@ local awesome_overrides =
   theme.dir = os.getenv('HOME') .. '/.config/awesome/theme'
 
   theme.icons = theme.dir .. '/icons/'
-  theme.wallpaper = theme.dir .. '/wallpapers/DarkCyan.png'
+  theme.wallpaper = theme.dir .. '/wallpapers/YellowT.jpg'
   --theme.wallpaper = '#e0e0e0'
   theme.font = 'Roboto medium 10'
   theme.title_font = 'Roboto medium 14'
@@ -41,7 +41,7 @@ local awesome_overrides =
 
   -- Borders
 
-  theme.border_width = dpi(2)
+  theme.border_width = dpi(0)
   theme.border_normal = theme.background.hue_800
   theme.border_focus = theme.primary.hue_300
   theme.border_marked = '#CC9393'
@@ -99,7 +99,7 @@ local awesome_overrides =
   theme.icon_theme = 'Papirus-Dark'
 
   --Client
-  theme.border_width = dpi(2)
+  theme.border_width = dpi(0)
   theme.border_focus = theme.primary.hue_500
   theme.border_normal = theme.background.hue_800
 end
