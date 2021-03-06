@@ -237,6 +237,19 @@ local globalKeys =
     end,
     {description = 'dropdown application', group = 'launcher'}
   ),
+  awful.key({modkey}, 'm', function()
+    focus = not _G.client.focus
+    if not focus then
+        _G.client.focus.minimized = true
+    else
+        for _, c in ipairs(mouse.screen.selected_tag:clients()) do
+            c.minimized = false
+        end
+    end
+end, {
+    description = 'minimize window in focus / unminimize all',
+    group = 'client'
+}),
   -- Widgets popups
   --[[awful.key(
     {altkey},
@@ -363,7 +376,22 @@ local globalKeys =
       awful.util.spawn_with_shell('lutris')
     end
   ),
+  awful.key({modkey, 'Shift'}, 'g', function(t)
+    t = t or awful.screen.focused().selected_tag
+    local current_gap = t.gap
+    local new_gap
+    if current_gap == 0 then
+        new_gap = 2
+    else
+        new_gap = 0
+    end
+    t.gap = new_gap
+end, {
+    description = 'toggle gaps',
+    group = 'awesome'
+}),
   -- System Monitor hotkey
+  --[[
   awful.key(
     {modkey},
     'm',
@@ -371,6 +399,7 @@ local globalKeys =
       awful.util.spawn_with_shell('mate-system-monitor')
     end
   ),
+  --]]
   -- Kill VLC
   awful.key(
     {modkey},
